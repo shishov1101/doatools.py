@@ -109,7 +109,7 @@ doaplot.plot_spectrum({'N = 200 Elements': sp}, grid, ground_truth=sources, use_
 # MUSIC 2 sources. Good for 6 degrees, bad for 3 degrees (SNR = 10dB, snapshots = 100, N = 8)
 power_noise = power_source / (10 ** (10 / 10))
 ula = model.UniformLinearArray(8, d0)
-sources = model.FarField1DSourcePlacement(np.linspace(-np.pi / 32, 0, 2))
+sources = model.FarField1DSourcePlacement(np.linspace(-np.pi / 64, 0, 2))
 source_signal = model.ComplexStochasticSignal(sources.size, power_source)
 noise_signal = model.ComplexStochasticSignal(ula.size, power_noise)
 _, R = model.get_narrowband_snapshots(ula, sources, wavelength, source_signal, noise_signal, n_snapshots,
